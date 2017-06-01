@@ -1,4 +1,4 @@
-package com.atlassian.polygene.bootstrap;
+package com.atlassian.polygene.hello.bootstrap;
 
 import com.atlassian.polygene.hello.polygene6.HelloWorldComposite;
 import org.qi4j.api.activation.ActivationException;

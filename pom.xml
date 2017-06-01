@@ -8,6 +8,10 @@
     <artifactId>polygene</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <modules>
+        <module>hello-world</module>
+    </modules>
+
     <properties>
         <polygene.version>2.1</polygene.version>
     </properties>

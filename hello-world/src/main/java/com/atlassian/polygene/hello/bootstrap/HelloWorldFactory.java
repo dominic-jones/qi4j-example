@@ -1,4 +1,4 @@
-package com.atlassian.polygene.bootstrap;
+package com.atlassian.polygene.hello.bootstrap;
 
 import com.atlassian.polygene.hello.polygene6.HelloWorldComposite;
 import com.atlassian.polygene.hello.polygene6.HelloWorldState;
