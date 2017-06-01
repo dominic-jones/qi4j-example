@@ -6,7 +6,7 @@ public interface HelloWorldState {
 
     String getPhrase();
 
-    void setName(String phrase);
+    void setName(String name);
 
     String getName();
 }

@@ -12,6 +12,11 @@ public class HelloWorldMixin implements HelloWorld {
 
     @Override
     public void setPhrase(final String phrase) {
+
+        if (phrase == null) {
+            throw new IllegalArgumentException("Phrase may not be null");
+        }
+
         this.phrase = phrase;
     }
 
@@ -23,10 +28,15 @@ public class HelloWorldMixin implements HelloWorld {
     @Override
     public void setName(final String name) {
 
+        if (name == null) {
+            throw new IllegalArgumentException("Name may not be null ");
+        }
+
+        this.name = name;
     }
 
     @Override
     public String getName() {
-        return null;
+        return name;
     }
 }

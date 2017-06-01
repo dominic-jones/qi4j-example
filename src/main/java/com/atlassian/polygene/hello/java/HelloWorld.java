@@ -1,4 +1,4 @@
-package com.atlassian.polygene.hello;
+package com.atlassian.polygene.hello.java;
 
 public class HelloWorld {
 
