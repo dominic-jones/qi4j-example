@@ -11,6 +11,8 @@ import org.qi4j.bootstrap.Energy4Java;
 import org.qi4j.bootstrap.LayerAssembly;
 import org.qi4j.bootstrap.ModuleAssembly;
 
+import static com.atlassian.polygene.commons.Qi4jCommons.installShutdownHook;
+
 public class Bootstrap {
 
     public static void main(String[] args) throws AssemblyException, ActivationException {
@@ -38,17 +40,5 @@ public class Bootstrap {
         System.out.println(helloWorld.say());
 
         application.activate();
-    }
-
-    private static void installShutdownHook(final Application application) {
-        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
-            if (application != null) {
-                try {
-                    application.passivate();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        }));
     }
 }
