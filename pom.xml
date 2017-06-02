@@ -34,6 +34,18 @@
         </dependency>
 
         <dependency>
+            <groupId>org.qi4j.extension</groupId>
+            <artifactId>org.qi4j.extension.entitystore-memory</artifactId>
+            <version>${polygene.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.qi4j.extension</groupId>
+            <artifactId>org.qi4j.extension.valueserialization-jackson</artifactId>
+            <version>${polygene.version}</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.qi4j.core</groupId>
             <artifactId>org.qi4j.core.testsupport</artifactId>
             <version>${polygene.version}</version>
