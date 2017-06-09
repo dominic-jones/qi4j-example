@@ -46,9 +46,10 @@ public class Bootstrap {
 
         UnitOfWork unitOfWork2 = mAccount.newUnitOfWork();
         UserFactory userFactory = mAccount.findService(UserFactory.class).get();
-        User user = userFactory.create("Sumir");
+        User user = userFactory.create("Sumir", account);
         System.out.println(user);
         System.out.println(user.name());
+        System.out.println(user.status());
         unitOfWork2.complete();
 
         UnitOfWork unitOfWork1 = mAccount.newUnitOfWork();
