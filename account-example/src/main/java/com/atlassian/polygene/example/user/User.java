@@ -18,7 +18,9 @@ public interface User extends Nameable {
 
         @Override
         public String status() {
-            return state.name().get() + " has account " + state.account().get().name();
+            return state.name().get() + " has account " +
+                    state.account().get().name() + " with balance " +
+                    state.account().get().currentBalance();
         }
     }
 

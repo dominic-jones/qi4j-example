@@ -19,6 +19,7 @@ import org.qi4j.bootstrap.Energy4Java;
 import org.qi4j.bootstrap.LayerAssembly;
 import org.qi4j.bootstrap.ModuleAssembly;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import static com.atlassian.polygene.commons.Qi4jCommons.installShutdownHook;
@@ -39,7 +40,7 @@ public class Bootstrap {
 
         UnitOfWork unitOfWork = mAccount.newUnitOfWork();
         AccountFactory accountFactory = mAccount.findService(AccountFactory.class).get();
-        Account account = accountFactory.create("Main");
+        Account account = accountFactory.create("Main", BigDecimal.valueOf(25.78));
         System.out.println(account);
         System.out.println(account.name());
         unitOfWork.complete();
