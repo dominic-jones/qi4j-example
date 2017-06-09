@@ -41,16 +41,14 @@ public class Bootstrap {
         UnitOfWork unitOfWork = mAccount.newUnitOfWork();
         AccountFactory accountFactory = mAccount.findService(AccountFactory.class).get();
         Account account = accountFactory.create("Main", BigDecimal.valueOf(25.78));
-        System.out.println(account);
-        System.out.println(account.name());
+
+        UserFactory userFactory = mAccount.findService(UserFactory.class).get();
+        userFactory.create("Sumir", account);
         unitOfWork.complete();
 
         UnitOfWork unitOfWork2 = mAccount.newUnitOfWork();
-        UserFactory userFactory = mAccount.findService(UserFactory.class).get();
-        User user = userFactory.create("Sumir", account);
-        System.out.println(user);
-        System.out.println(user.name());
-        System.out.println(user.status());
+        Account dianaAccount = accountFactory.create("Primary", BigDecimal.valueOf(182.41));
+        userFactory.create("Diana", dianaAccount);
         unitOfWork2.complete();
 
         UnitOfWork unitOfWork1 = mAccount.newUnitOfWork();
@@ -67,7 +65,7 @@ public class Bootstrap {
             LayerAssembly lPersistence = persistenceLayer(assembly);
 
             LayerAssembly lDomain = lDomain(assembly);
-            lPersistence.uses(lDomain);
+            lDomain.uses(lPersistence);
 
             return assembly;
         };
