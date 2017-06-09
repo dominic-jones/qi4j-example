@@ -10,6 +10,7 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>account-example</module>
         <module>hello-world-refactor</module>
         <module>hello-world-entities</module>
         <module>common</module>

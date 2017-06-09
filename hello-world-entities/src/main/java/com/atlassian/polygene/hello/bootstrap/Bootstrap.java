@@ -1,8 +1,8 @@
 package com.atlassian.polygene.hello.bootstrap;
 
+import com.atlassian.polygene.commons.MemoryAssembler;
 import com.atlassian.polygene.hello.polygene.HelloWorldComposite;
 import org.qi4j.api.activation.ActivationException;
-import org.qi4j.api.common.Visibility;
 import org.qi4j.api.structure.Application;
 import org.qi4j.api.structure.Module;
 import org.qi4j.api.unitofwork.UnitOfWork;
@@ -13,9 +13,6 @@ import org.qi4j.bootstrap.AssemblyException;
 import org.qi4j.bootstrap.Energy4Java;
 import org.qi4j.bootstrap.LayerAssembly;
 import org.qi4j.bootstrap.ModuleAssembly;
-import org.qi4j.entitystore.memory.MemoryEntityStoreAssembler;
-import org.qi4j.index.rdf.assembly.RdfMemoryStoreAssembler;
-import org.qi4j.valueserialization.jackson.JacksonValueSerializationAssembler;
 
 import static com.atlassian.polygene.commons.Qi4jCommons.installShutdownHook;
 
@@ -88,9 +85,9 @@ public class Bootstrap {
         LayerAssembly layer = assembly.layer("domain");
 
         ModuleAssembly mMemory = layer.module("memory");
-        new MemoryEntityStoreAssembler().visibleIn(Visibility.layer).assemble(mMemory);
-        new JacksonValueSerializationAssembler().assemble(mMemory);
-        new RdfMemoryStoreAssembler().assemble(mMemory);
+
+        new MemoryAssembler().assemble(layer, mMemory
+        );
 
         return layer;
     }

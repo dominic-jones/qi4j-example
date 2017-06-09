@@ -13,5 +13,12 @@
     <artifactId>common</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    
+    <dependencies>
+        <dependency>
+            <groupId>org.qi4j.extension</groupId>
+            <artifactId>org.qi4j.extension.indexing-rdf</artifactId>
+            <version>${polygene.version}</version>
+        </dependency>
+    </dependencies>
+
 </project>
