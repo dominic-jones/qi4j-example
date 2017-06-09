@@ -10,8 +10,8 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>hello-world</module>
-        <module>entities</module>
+        <module>hello-world-refactor</module>
+        <module>hello-world-entities</module>
         <module>common</module>
     </modules>
 
